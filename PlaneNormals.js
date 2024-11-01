@@ -39,7 +39,7 @@ const planeHeight = 5;
 planeGeo = new THREE.PlaneGeometry(planeWidth, planeHeight);
 planeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 plane = new THREE.Mesh(planeGeo, planeMaterial);
-// plane.rotation.x = -Math.PI / 2;
+plane.rotation.x = -Math.PI / 2;
 scene.add(plane);
 
 // Show plane's vertex normals
@@ -53,7 +53,7 @@ const cubeDepth = 1.5;
 cubeGeo = new THREE.BoxGeometry(cubeWidth, cubeHeight, cubeDepth);
 cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00faff });
 cube = new THREE.Mesh(cubeGeo, cubeMaterial);
-// cube.position.y = 0;
+// cube.position.y = cubeHeight/2;
 scene.add(cube);
 
 // Show cube's vertex normals
