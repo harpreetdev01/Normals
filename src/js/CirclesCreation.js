@@ -11,17 +11,31 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Create material for the point
 const material = new THREE.PointsMaterial({ color: 0xff0000, size: 0.1 });
-let xNorm = 0;
+let xNorm = 6.25;
 let yNorm = 0;
 const depth = 0;
+
+// Width and Height of the WebGL Canvas
+const canvasWidth = canvas.scrollWidth;
+const canvasHeight = canvas.scrollHeight;
+console.log(`canvas width: ${canvasWidth}, canvas height: ${canvasHeight}`)
 
 renderer.domElement.addEventListener("mousemove", (e) => {
     // normalized coorindates
     // xNorm = (e.clientX / window.innerWidth) * 2 - 1;
-    xNorm = (e.clientX / window.innerWidth) * 2 - 1;
-    yNorm = -(e.clientY / window.innerHeight) * 2 + 1;
+    // xNorm = (e.clientX / window.innerWidth) * 2 - 1;
+    // yNorm = -(e.clientY / window.innerHeight) * 2 + 1;
 
-    console.log(`ClientX: ${e.clientX}, xNormalized: ${xNorm}`);
+    // Origin point
+    let x = e.clientX;
+    let y = e.clientY;
+
+    console.log(`x: ${x}, y: ${y}`);
+
+    console.log(xNorm);
+
+    // console.log(`ClientX: ${e.clientX}, xNormalized: ${xNorm}`);
+
 
     // xNorm = (e.clientX) / 30;
     // yNorm = (e.clientY / 30);
